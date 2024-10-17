@@ -1,0 +1,78 @@
+/* @font-face {
+	font-family: 'Source Han Sans';
+	src: url(fonts/KaiGenGothicCN-ExtraLight_463d702.eot);
+	src: url(fonts/KaiGenGothicCN-ExtraLight_463d702.eot?) format('embedded-opentype'), url(fonts/KaiGenGothicCN-ExtraLight_b651797.woff) format('woff'), url(fonts/KaiGenGothicCN-ExtraLight_f9029e2.ttf) format('truetype'), url(fonts/KaiGenGothicCN-ExtraLight_127a01c.svg) format('svg');
+	font-family: 'Ping hei';
+	src: url("fonts/PingHei-light.woff") format("woff"), url("fonts/PingHei-light.ttf") format("truetype");
+}
+@font-face {
+	font-family:'PingHei 200';
+	src:url("fonts/PingHei-light.eot");
+} */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	background: #fff;
+	min-height: 100%;
+	/*font-family:'Ping hei','Source Han Sans',Helvetica,Tahoma,Arial,'Hiragino Sans GB',"Microsoft YaHei",SimSun,Heiti,sans-serif;*/
+	font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei";
+	font-size: 14px;
+}
+.header {
+	width: 100%;
+	min-width: 1166px;
+	padding: 20px;
+	position: absolute;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+.logo {
+	margin-top: 10px;
+	margin-left: 30px;
+	float: left;
+}
+
+.close {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.close>a>ul>li {
+	width: 30px;
+	height: 5px;
+	list-style: none;
+	background: #14cc70;
+	margin: 5px 5px 5px 5px;
+}
+
+.box {
+	display: table;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	min-width:1166px;
+}
+
+.content {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	padding-top: 150px;
+	box-sizing: border-box;
+
+}
+input{font-family:'Ping hei','Source Han Sans';}
