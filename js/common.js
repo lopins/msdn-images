@@ -104,6 +104,9 @@ $(document).ready(function(){
                     return;
                 }
                 let down = JSON.parse(data.keywords);
+                // 移除不需要的键值对
+                delete down["定制装机U盘"];
+                delete down["定制系统盘"];
                 $("#box").hide();
                 $("#desc").html(data.description);
                 let item = downData;
