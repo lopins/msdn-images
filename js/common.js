@@ -104,11 +104,12 @@ $(document).ready(function(){
                     return;
                 }
                 let down = JSON.parse(data.keywords);
-                
+
                 // 移除不需要的键值对
-                delete down["定制装机U盘"];
-                delete down["定制系统盘"];
-                delete down["购买U盘"];
+                // delete down["123云盘"];             // 123云盘付费下载
+                delete down["定制装机U盘"];         // 广告链接
+                delete down["定制系统盘"];          // 广告链接
+                delete down["购买U盘"];             // 广告链接
 
                 $("#box").hide();
                 $("#desc").html(data.description);
