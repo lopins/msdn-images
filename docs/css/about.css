@@ -1,0 +1,183 @@
+.article_box{
+	margin: 120px auto 0;
+	width: 760px;
+	font-size: 16px;    border: 1px solid #f5f5f5; padding: 20px;
+}
+.title{
+	color: #2b2b2b;
+	font-size: 40px;
+	margin-bottom: 30px;
+	/*letter-spacing: 1px;*/
+}
+.instructions{
+	color: #3E3E3E;
+	font-size: 16px;
+	margin-bottom: 30px;
+	/*letter-spacing: 2px;*/
+	line-height:30px;
+}
+.list{
+	color: #3E3E3E;
+	font-size: 16px;
+	/*letter-spacing: 1px;*/
+	line-height:28px;
+}
+.step{
+	color: #333333;
+	font-size: 24px;
+	margin-bottom: 10px;
+	/*letter-spacing: 1px;*/
+}
+.text{
+	color: #333333;
+	margin-bottom: 10px;
+	line-height: 24px;
+	/*letter-spacing: 1px;*/
+}
+.article_box img{
+	max-width: 1024px;
+	margin-bottom: 20px;
+	text-align: center;
+	display: block;
+	/*margin: 10px auto;*/
+}
+.article_box a{
+	color: #14cc70;
+	text-decoration: none;
+}
+.box a:hover{
+	/*text-decoration: underline;*/
+}
+.download_box{
+	margin: 50px 0;
+	text-align: center;
+}
+.download_box a{
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	background: #14CC70;
+	position: relative;
+}
+.circle{
+	width: 60px;
+	height: 60px;
+	border: 2px solid #FFFFFF;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -30px 0 0 -30px;
+	box-sizing: border-box;
+}
+.divC p{
+	color: #14cc70;
+	border: 2px solid #14cc70;
+	border-radius: 4px;
+	width:100px;
+    font-size: large;
+}
+.imgC {
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+p:hover +.imgC {
+	margin-left:  auto auto auto auto;
+    display: block;
+}
+
+.soft_item:hover .soft_item_img img{
+	display: none;
+}
+.download_box a:before{
+	content: '';
+	display: block;
+	width: 3px;
+	height: 20px;
+	background: #FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: calc(50% - 10px);
+	top: -webkit-calc(50% - 10px);
+	top: -moz-calc(50% - 10px);
+}
+.download_box a:after{
+	content: '';
+	display: block;
+	width: 12px;
+	height: 12px;
+	border-bottom: 3px solid #FFFFFF;	
+	border-right: 3px solid #FFFFFF;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: calc(50% - 4px);
+	top: -webkit-calc(50% - 4px);
+	top: -moz-calc(50% - 4px);
+}
+.download_box a:hover:before,.download_box a:hover:after{
+	animation: download_arrow 1s ease;
+	-webkit-animation: download_arrow 1s ease;
+	-moz-animation: download_arrow 1s ease;
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+}
+@keyframes download_arrow{
+	0%{margin-top: -10px;}
+	100%{margin-top: 10px;}
+}
+@-webkit-keyframes download_arrow{
+	0%{margin-top: -10px;}
+	100%{margin-top: 10px;}
+}
+@-moz-keyframes download_arrow{
+	0%{margin-top: -10px;}
+	100%{margin-top: 10px;}
+}
+@-ms-keyframes download_arrow{
+	0%{margin-top: -10px;}
+	100%{margin-top: 10px;}
+}
+.download_label{
+	color: #FFFFFF;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 20px;
+	font-size: 14px;
+}
+.download_title{
+	line-height: 32px;
+	font-size: 20px;
+	color: #4c4c4c;
+}
+.download_desc{
+	color: #b2b2b2;
+}
+
+.jiaocheng{    padding-left: 100px;}
+.jiaocheng .hr{ border: 0px; border-top: 1px solid #EFEFEF; margin: 30px 0px;}
+.jiaocheng .a_links{ list-style: none;}
+.jiaocheng .a_links li{ list-style: none; line-height: 40px;}
+.jiaocheng .a_links li a{ font-size: 18px;}
+.jiaocheng .a_links li a:hover{ text-decoration: underline;}
+.jiaocheng .text{ font-size: 16px;}
+.jiaocheng .code{ text-align: center; padding: 30px 0px;    margin-right: 100px;}
+
+.return_top{ position: fixed; right: 10px; bottom: 10px;}
+.return_top span,.return_top a{ display: block; width:50px; height:50px; text-align: center; line-height:50px; color: #FFF; background-color: #0D0A0A; font-size: 16px; margin-bottom:10px; cursor: pointer;}
+.return_top span.top{ background: url(../images/top.png) no-repeat center #a2a0a0;}
+.return_top a.home{    background-color: #bdbdbd; background: url(../images/home.png) no-repeat center #bdbdbd;}
+.return_top span:hover,.return_top a:hover{ background-color: #14cc70;}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>ic_download</title>
+    <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="xitongku-01" transform="translate(-655.000000, -610.000000)">
+            <g id="ic_download" transform="translate(655.000000, 610.000000)">
+                <circle id="Oval" stroke="#FFFFFF" stroke-width="2" cx="16" cy="16" r="15"></circle>
+                <rect id="Rectangle" fill="#FFFFFF" x="8" y="15" width="14" height="2"></rect>
+                <g id="Group-4" transform="translate(17.000554, 10.346796)" fill="#FFFFFF">
+                    <rect id="Rectangle-Copy-6" transform="translate(3.535534, 3.535534) rotate(-315.000000) translate(-3.535534, -3.535534) " x="-0.464466094" y="2.53553391" width="8" height="2"></rect>
+                    <rect id="Rectangle-Copy-7" transform="translate(3.541209, 7.747515) rotate(-225.000000) translate(-3.541209, -7.747515) " x="-0.458791121" y="6.74751491" width="8" height="2"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
