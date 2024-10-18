@@ -47,7 +47,7 @@ $(document).ready(function(){
         }
 
         /*if (["", "index.html"].includes(lastPart)) {
-            // xxx
+            // getMinChildrenNodes('https://cdn.jsdelivr.net/gh/lopins/msdn-images/docs/data/windows.json');
         } else */if (["", "index.html"].includes(lastPart) || lastPart === "windows.html" || lastPart === "office.html") {
             $.ajax({
                 type: "get",
@@ -452,4 +452,32 @@ $(document).ready(function(){
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
     });
+
+    async function getMinChildrenNodes(url) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+            const data = await response.json();
+            function filterMinChildren(nodes) {
+                let result = [];
+                function traverse(node) {
+                    if (node.children && node.children.length > 0) {
+                        for (let child of node.children) {
+                            traverse(child);
+                        }
+                    } else {
+                        result.push(node);
+                    }
+                }
+                nodes.forEach(node => traverse(node));
+                return result;
+            }
+            const minChildren = filterMinChildren(data);
+            console.log(JSON.stringify(minChildren, null, 2));
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
+    }
 });
