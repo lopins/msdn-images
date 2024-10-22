@@ -64,7 +64,7 @@ a {
 	height: 100%;
 	position: absolute;
 	top: 0;
-	min-width:1166px;
+	/* min-width:1166px; */
 }
 
 .content {

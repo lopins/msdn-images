@@ -137,7 +137,7 @@
 }
 @media only screen and (max-device-width: 480px){
 	body{ width:100%;  overflow:hidden;}
-	.logo img{    width: 150%;}
+	.logo img{    /*width: 150%;*/}
 	.box{    min-height: initial;
     width: 100%; /*max-width:320px;*/}
 	.show_box{ padding:0px 20px;}
