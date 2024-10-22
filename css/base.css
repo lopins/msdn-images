@@ -24,7 +24,7 @@ body {
 }
 .header {
 	width: 100%;
-	min-width: 1166px;
+	/* min-width: 1166px; */
 	padding: 20px;
 	position: absolute;
 	z-index: 1000;
