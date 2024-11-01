@@ -1,7 +1,20 @@
-.article_box{
-	margin: 120px auto 0;
-	width: 760px;
-	font-size: 16px;    border: 1px solid #f5f5f5; padding: 20px;
+/* 基本样式 */
+.article_box {
+	margin: 0 auto;
+    overflow: auto;
+    width: 100%;
+    max-width: 760px;
+    font-size: 16px;
+    border: 1px solid #f5f5f5;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 手机端样式 */
+@media (max-width: 768px) {
+    .article_box {
+        max-height: calc(100vh - 40px);
+    }
 }
 .title{
 	color: #2b2b2b;
