@@ -298,11 +298,9 @@ input{font-family:'Ping hei','Source Han Sans';}
 
 .version_box ul,.version_box li,.version_box dd{ list-style: none; margin: 0px; padding: 0px;}
 .version_box li,.version_box dd{    display: inline-block;
-    width: 85px;
-    height: 85px;
-    line-height: 85px;
-    /*height: 85px;*/
-    /*line-height: 85px;*/
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
     border: 1px solid #e1e1e1;
     text-align: center;
     color: #b2b2b2;
