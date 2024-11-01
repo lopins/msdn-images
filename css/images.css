@@ -30,12 +30,16 @@ body {
 	z-index: 1000;
 	box-sizing: border-box;
 }
+@media screen and (max-width: 1200px) {
+    .header {display: none;}
+}
 
 .logo {
 	margin-top: 10px;
 	margin-left: 30px;
 	float: left;
 }
+@media only screen and (max-device-width: 480px) {.logo{filter: invert(100%);}}
 
 .close {
 	float: right;
@@ -281,32 +285,17 @@ input{font-family:'Ping hei','Source Han Sans';}
 	.box{    min-height: initial;
     width: 100%; /*max-width:320px;*/}
 	.show_box{ padding:0px 20px;}
-	.left{ width:100%; height:50%;min-height:440px;    position: static;}
+	.left{width:100%; height:50%;min-height:440px;position: static; display:none;}
 	.show_img>img{ width:70%;}
 	.show_img{    text-align: center;}
-	.right{ width:100%; height:40%;    position: static;padding-top: 60px;padding-bottom:0px;}
+	.right{ width:100%; height:40%;    position: static;/*padding-top: 60px;*/padding-bottom:0px;}
 
 	.close_btn2,.close_btn{
     position: fixed;}
 	.close_btn2 .icon-left,.close_btn2 .icon-left:before,.close_btn2 .icon-left:after,.close_btn2 .icon-right,.close_btn2 .icon-right:before,.close_btn2 .icon-right:after{ background-color:#FFFFFF;}
 
 }
-@media (device-width:375px) and (-webkit-min-device-pixel-ratio:2){/* 兼容iphone 6 */
-body{ width:100%;  overflow:hidden;}
-	.logo img{    width: 150%;}
-	.box{    min-height: initial;
-    width: 100%; max-width:320px;}
-	.show_box{ padding:0px 20px;}
-	.left{ width:100%; height:50%;min-height:440px;    position: static;}
-	.show_img>img{ width:70%;}
-	.show_img{    text-align: center;}
-	.right{ width:100%; height:40%;    position: static;padding-top: 60px;padding-bottom:0px;}
 
-	.close_btn2,.close_btn{
-    position: fixed;}
-	.close_btn2 .icon-left,.close_btn2 .icon-left:before,.close_btn2 .icon-left:after,.close_btn2 .icon-right,.close_btn2 .icon-right:before,.close_btn2 .icon-right:after{ background-color:#FFFFFF;}
-
-}
 .version_box ul,.version_box li,.version_box dd{ list-style: none; margin: 0px; padding: 0px;}
 .version_box li,.version_box dd{    display: inline-block;
     width: 85px;
@@ -323,12 +312,12 @@ body{ width:100%;  overflow:hidden;}
     margin-bottom: 10px;}
 .version_box li:hover{    border: 1px solid #14cc70;
     color: #14cc70;}
-.version_box {
+/* .version_box {
     display: table-cell;
     vertical-align: middle;
     padding-left: 100px;
     box-sizing: border-box;
-}
+} */
 .form_group {
     margin: 20px 0;
     position: relative;
