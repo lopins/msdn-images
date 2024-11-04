@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="none">
+    <title>多级联动下拉筛选</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #result {
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .downinfo {
+            margin-bottom: 20px;
+        }
+        .downinfo p {
+            word-wrap: break-word;
+            word-break: break-all; 
+            margin: 0;
+            line-height: 2.0; 
+            white-space: pre-wrap;
+        }
+        .downinfo h3 {
+            margin: 0 0 10px 0;
+        }
+        .downinfo hr {
+            margin: 10px 0;
+            border: none;
+            border-top: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <select class="form-control" id="select"></select>
+</div>
+
+<div class="result">
+    <!-- <h2>下载信息：</h2> -->
+    <section id="result">请选择以查看详细信息。</section>
+</div>
+
+<script>
+    let dataFlag = "windows";
+    $(document).ready(function() {
+        $.ajax({
+            type: "get",
+            url: "./data/" + (dataFlag || 'windows') + ".json?t=" + Date.now(),
+            dataType: "json",
+            success: function (res) {
+                let box = $(".container");
+                let selectBox1 = $("#select");
+                $.each(res, function(index, item) {
+                    $("<option>").val(index).text(item.name || "未命名").appendTo(selectBox1);
+                });
+
+                // 递归函数，用于生成下拉框
+                function generateSelectBoxes(currentIndex, currentData) {
+                    let selectBoxId = "select" + (currentIndex + 1);
+                    let selectBox = $("#" + selectBoxId);
+                    if (!selectBox.length) {
+                        selectBox = $("<select></select>").addClass("form-control").attr("id", selectBoxId);
+                        box.append(selectBox);
+                    } else {
+                        selectBox.empty();
+                    }
+                    $.each(currentData, function(index, item) {
+                        $("<option>").val(index).text(item.name || "未命名").appendTo(selectBox);
+                    });
+
+                    // 绑定 change 事件
+                    selectBox.change(function() {
+                        let selectedIndex = $(this).val();
+                        let selectedChildren = currentData[selectedIndex].children;
+
+                        if (selectedChildren && selectedChildren.length > 0) {
+                            $(this).nextAll(".form-control").remove();
+                            generateSelectBoxes(currentIndex + 1, selectedChildren);
+                        } else {
+                            let selectedItem = currentData[selectedIndex];
+                            updateResultInfo(selectedItem);
+                        }
+                    });
+
+                    // 默认选中第一个选项
+                    if (currentData.length > 0) {
+                        selectBox.val(0).change();
+                    }
+                    // 递归生成下级分类
+                    if (currentData.length > 0 && currentData[0].children && currentData[0].children.length > 0) {
+                        generateSelectBoxes(currentIndex + 1, currentData[0].children);
+                    }
+                }
+
+                // // 更新底部信息的函数
+                function updateResultInfo(item) {
+                    function formatFields(data) {
+                        try {
+                            const new_data = JSON.parse(data);
+                            // 移除不需要的键值对
+                            delete new_data["123云盘"];                 // 123云盘付费下载
+                            delete new_data["定制装机U盘"];             // 广告链接
+                            delete new_data["定制系统盘"];              // 广告链接
+                            delete new_data["购买U盘"];                 // 广告链接
+                            delete new_data["定制U盘"];                 // 广告链接
+                            if (typeof new_data === 'object') {
+                                const formattedData = {};
+                                for (const key in new_data) {
+                                    if (new_data.hasOwnProperty(key)) {
+                                        const parts = key.split('|');
+                                        if ( parts.length > 1 && ['百度网盘', '百度云盘', '天翼网盘', '天翼云盘', '123云盘', '123网盘'].includes(parts[0].trim()) ) {
+                                            const newKey = parts[0];
+                                            const suffix = parts[1];
+                                            if (suffix && suffix.length > 0) {
+                                                formattedData[newKey] = `${new_data[key]}?pwd=${suffix}`;
+                                            } else {
+                                                formattedData[newKey] = new_data[key];
+                                            }
+                                        } else {
+                                            formattedData[key] = new_data[key];
+                                        }
+                                    }
+                                }
+                                // return Object.keys(formattedData).map(key => `<p>${key}: ${formattedData[key]}</p>`).join('');
+                                // 将格式化后的数据转换为 HTML 字符串
+                                const htmlContent = Object.keys(formattedData).map(key => {
+                                    let value = formattedData[key];
+                                    const linkPatterns = [
+                                        { pattern: /ed2k:\/\/\|file\|[^|]+\|[\d]+\|[0-9A-Fa-f]{32}\|\//i, protocol: 'ed2k:' },
+                                        { pattern: /magnet:\?xt=urn:btih:[0-9a-f]{40}(&[^\s]+)*/i, protocol: 'magnet:' },
+                                        { pattern: /https?:\/\/[^\s]+/i, protocol: 'http://' },
+                                        { pattern: /\.torrent$/i, protocol: 'http://' },
+                                        { pattern: /ftp:\/\/[^\s]+/i, protocol: 'ftp://' },
+                                        { pattern: /thunder:\/\/[^\s]+/i, protocol: 'thunder://' }
+                                    ];
+                                    linkPatterns.forEach(pattern => {
+                                        const regex = new RegExp(pattern.pattern, 'gi');
+                                        value = value.replace(regex, match => {
+                                            return `<a href="${match}" target="_blank" rel="extend">${match}</a>`;
+                                        });
+                                    });
+                                    return `<p>${key}: ${value}</p>`;
+                                }).join('');
+                                return htmlContent;
+                            } else if (typeof new_data === 'string') {
+                                return new_data.replace(/\n/g, '</p><p>');
+                            } else {
+                                return "不存在这个版本的信息";
+                            }
+                        } catch (e) {
+                            return typeof data === 'string' ? data.replace(/\n/g, '</p><p>') : "不存在这个版本的信息";
+                        }
+                    }
+                    const description = formatFields(item.description || "不存在这个版本的镜像详情信息");
+                    const keywords = formatFields(item.keywords || "不存在这个版本的镜像下载信息");
+                    const resultHtml = `
+                        <div class="downinfo">
+                            <h3>文件信息：</h3>
+                            <hr/>
+                            <p>${description}</p>
+                        </div>
+                        <div class="downinfo">
+                            <h3>下载信息:</h3>
+                            <hr/>
+                            ${keywords}
+                        </div>
+                    `;
+                    $("#result").html(resultHtml);
+                }
+
+                // 初始化第一个下拉框的 change 事件
+                selectBox1.change(function() {
+                    let selectedIndex = $(this).val();
+                    let selectedChildren = res[selectedIndex].children;
+
+                    if (selectedChildren && selectedChildren.length > 0) {
+                        // 移除多余的下拉框
+                        $(this).nextAll(".form-control").remove();
+                        generateSelectBoxes(1, selectedChildren);
+                    } else {
+                        // 显示最终节点信息
+                        let selectedItem = res[selectedIndex];
+                        updateResultInfo(selectedItem);
+                    }
+                });
+
+                // 手动触发第一个下拉框的 change 事件，以初始化后续的下拉框
+                if (res.length > 0 && res[0].children && res[0].children.length > 0) {
+                    generateSelectBoxes(1, res[0].children);
+                } else if (res.length > 0) {
+                    // 显示初始节点信息
+                    let selectedItem = res[0];
+                    updateResultInfo(selectedItem);
+                }
+
+                // 默认选中第一个选项
+                if (res.length > 0) {
+                    selectBox1.val(0).change();
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert("请求失败：" + textStatus + ", " + errorThrown);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

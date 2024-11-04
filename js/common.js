@@ -110,6 +110,7 @@ $(document).ready(function(){
                 delete down["定制装机U盘"];         // 广告链接
                 delete down["定制系统盘"];          // 广告链接
                 delete down["购买U盘"];             // 广告链接
+                delete down["定制U盘"];             // 广告链接
 
                 $("#box").hide();
                 $("#desc").html(data.description);
