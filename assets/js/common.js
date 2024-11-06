@@ -1,5 +1,3 @@
-var _hmt = _hmt || [];
-
 $(document).ready(function(){
     $(".close_btn,.close_btn2").click(function () {
         // $(this).toggleClass("open");
@@ -48,10 +46,10 @@ $(document).ready(function(){
 
         /*if (["", "index.html"].includes(lastPart)) {
             // getMinChildrenNodes('https://cdn.jsdelivr.net/gh/lopins/msdn-images/docs/data/windows.json');
-        } else */if (["", "index.html"].includes(lastPart) || lastPart === "windows.html" || lastPart === "office.html") {
+        } else */if (lastPart === "windows.html" || lastPart === "office.html") {
             $.ajax({
                 type: "get",
-                url: "../data/" + dataFlag + ".json?t=" + Date.now(),
+                url: "../../data/" + dataFlag + ".json?t=" + Date.now(),
                 dataType: "json",
                 success: function (res) {
                     let data = [];
@@ -445,13 +443,6 @@ $(document).ready(function(){
         } else {
 
         }
-    });
-
-    $(function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/h" + "m.j" + "s?c011ff44f5dea8" + "92e6a6c2da089362f0";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
     });
 
     async function getMinChildrenNodes(url) {

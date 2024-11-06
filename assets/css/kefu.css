@@ -1,0 +1,264 @@
+/* 大白菜客服 */
+.customerService {
+	position: fixed;
+	right: 0px;
+	top: 60%;
+	width: 80px;
+}
+
+.customer-div1>div {
+	width: 110px;
+	height: 110px;
+	margin: auto;
+	margin-bottom: 8px;
+}
+
+.customerService-qq {
+	display: block;
+	position: relative;
+	height: 80px;
+	width: 80px;
+}
+
+.customerService-qqq {
+	display: block;
+	position: relative;
+	height: 80px;
+	width: 80px;
+}
+
+.customerService-wx {
+	display: block;
+	position: relative;
+	height: 80px;
+	width: 80px;
+}
+
+.customerService-qq .customer-div {
+	display: block;
+	background: url(../images/qq2.png)no-repeat center 10px;
+	transition: 0.4s linear;
+	width: 80px;
+	height: 80px;
+	background-color: #e4f8f0;
+	border-right: none;
+	text-align: center;
+	margin-top: 3px;
+	cursor: pointer;
+}
+
+.customerService-qqq .customer-div {
+	display: block;
+	background: url(../images/qqq2.png)no-repeat center 10px;
+	transition: 0.4s linear;
+	width: 80px;
+	height: 80px;
+	background-color: #e4f8f0;
+	border-right: none;
+	text-align: center;
+	margin-top: 3px;
+	cursor: pointer;
+	
+}
+
+.customerService-wx .customer-div {
+	display: block;
+	background: url(../images/wx2.png)no-repeat center 10px;
+	transition: 0.4s linear;
+	width: 80px;
+	height: 80px;
+	background-color: #e4f8f0;
+	border-right: none;
+	text-align: center;
+	margin-top: 3px;
+	cursor: pointer;
+
+}
+
+.customerService>div .customer-div span {
+	font-size: 14px;
+	display: inline-block;
+	margin-top: 50px;
+	color: #1ec456;
+}
+
+.customerService>a .customer-div span {
+	font-size: 14px;
+	display: inline-block;
+	margin-top: 50px;
+	color: #1ec456;
+}
+
+.customerService .customerService-wx .customer-div span {
+	font-size: 13px;
+}
+
+.customerService-qq .customer-div1 {
+	border: solid 1px #d9d9d9;
+	margin-top: -1px;
+	background: #fff;
+	opacity: 0;
+	text-align: center;
+	z-index: 0;
+	transform: scale(0.01);
+	transform-origin: 100% 0%;
+	transition: 0.4s linear;
+	width: 138px;
+	border-radius: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	color: #333;
+
+	position: absolute;
+	right: 90px;
+	top: 0px;
+	margin-top: 0.3px;
+}
+
+
+.customerService-qqq .customer-div1 {
+	border: solid 1px #d9d9d9;
+	margin-top: -1px;
+	background: #fff;
+	opacity: 0;
+	text-align: center;
+	z-index: 0;
+	transform: scale(0.01);
+	transform-origin: 100% 0%;
+	transition: 0.4s linear;
+	width: 138px;
+	border-radius: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	color: #333;
+
+	position: absolute;
+	right: 90px;
+	top: 0px;
+	margin-top: 0.3px;
+}
+
+.customerService-wx .customer-div1 {
+	border: solid 1px #d9d9d9;
+	margin-top: -1px;
+	background: #fff;
+	opacity: 0;
+	text-align: center;
+	z-index: 0;
+	transform: scale(0.01);
+	transform-origin: 100% 0%;
+	transition: 0.4s linear;
+	width: 138px;
+	border-radius: 3px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	color: #333;
+
+	position: absolute;
+	right: 90px;
+	top: 0px;
+	margin-top: 0.3px;
+}
+
+.customerService-icon1 {
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 12px solid transparent;
+	border-left-color: #d9d9d9;
+	position: absolute;
+	top: 10px;
+	right: -24px;
+}
+
+.customerService-icon2 {
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 11px solid transparent;
+	border-left-color: #fff;
+	position: absolute;
+	top: 11px;
+	right: -22px;
+}
+
+/* 二维码 */
+.customerService .customer-div1 img {
+	width: 110px;
+	height: 110px;
+	display: block;
+	margin: auto;
+}
+
+/* 号码 客服时间 */
+.customerService .customer-div1 .customerService-sj {
+	display: block;
+	font-size: 12px;
+}
+
+
+
+.customer-div1 span:nth-child(1) {
+	display: inline-block;
+	margin: 10px 0px;
+}
+
+/* 划入变样式 */
+.customerService-qq:hover .customer-div1 {
+	opacity: 1;
+	position: absolute;
+	transform: scale(1);
+}
+
+.customerService-qqq:hover .customer-div1 {
+	opacity: 1;
+	position: absolute;
+	transform: scale(1);
+}
+
+.customerService-wx:hover .customer-div1 {
+	opacity: 1;
+	position: absolute;
+	transform: scale(1);
+}
+
+.customerService-qq:hover .customer-div {
+	width: 80px;
+	height: 80px;
+	background: url(../images/qq1.png)no-repeat center 10px;
+	background-color: #1ec456;
+}
+
+.customerService-qqq:hover .customer-div {
+	width: 80px;
+	height: 80px;
+	background: url(../images/qqq1.png)no-repeat center 10px;
+	background-color: #1ec456;
+}
+
+.customerService-wx:hover .customer-div {
+	width: 80px;
+	height: 80px;
+	background: url(../images/wx1.png)no-repeat center 10px;
+	background-color: #1ec456;
+}
+
+.customerService-qq:hover .customer-div>span {
+	color: #fff;
+}
+
+.customerService-qqq:hover .customer-div>span {
+	color: #fff;
+}
+
+.customerService-wx:hover .customer-div>span {
+	color: #fff;
+}
+
+
+
