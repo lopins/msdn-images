@@ -1,0 +1,292 @@
+/* 使用手册 */
+.manual-main {
+	text-align: left;
+	position: relative;
+	min-height:800px;
+}
+
+/* 右边侧边栏 */
+.manual-main aside {
+	width: 326px;
+	box-shadow: 0px 1px 7px 0px rgba(98, 127, 107, 0.13);
+	margin-top: 20px;
+	display: inline-block;
+	position: absolute;
+	left: 0px;
+}
+
+.manual-main-aside-div1 {
+	height: 68px;
+	width: 326px;
+	background: url(../images/user_manual_bg.png)no-repeat;
+	line-height: 68px;
+	text-align: center;
+}
+
+.manual-main-aside-div1 span {
+	font-size: 24px;
+	font-weight: normal;
+	color: #ffffff;
+}
+
+.help-details-main-div3 img{
+	max-width:750px;
+}
+
+.manual-main-aside-div2>p {
+	width: 326px;
+	height: 54px;
+	background-color: #fafafa;
+	border: solid 1px #ffffff;
+	line-height: 54px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #333333;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+.manual-main-aside-div2 img {
+	margin-left: 20px;
+	margin-right: 10px;
+	vertical-align: top;
+	margin-top: 17px;
+}
+
+.manual-main-aside-div2 ul {
+	padding-bottom: 13px;
+	height: 300px;
+	overflow-y: auto;
+	display: none;
+	position: relative;
+}
+
+.manual-main-aside-div2 a {
+	display: inline-block;
+	margin-top: 11px;
+}
+
+.manual-main-aside-div2 a:hover p{
+	color: #1ec456;
+}
+
+.manual-main-aside-div2 a:hover span {
+	background: #1ec456;
+}
+
+
+.manual-main-aside-div2 span {
+	font-size: 14px;
+	font-weight: normal;
+	color: #666666;
+}
+
+.manual-main-aside-div2  span {
+	    transform: skewX(-10deg);
+	    text-align: center;
+	    line-height: 16px;
+	    display: inline-block;
+	    font-family: "ysbth";
+	    width: 30px;
+	    height: 16px;
+	    background-color: #dadada;
+	    margin-left: 20px;
+	    margin-right: 5px;
+		vertical-align: text-top;
+	    color: #fff;
+}
+
+
+.manual-main-aside-div2 ul p {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	color: #666666;
+	width: 235px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+
+/* 左边文章 */
+.manual-main article {
+	width: 854px;
+	display: inline-block;
+	float: right;
+	margin-top: 20px;
+	padding-bottom: 20px;
+}
+
+
+.other-top-p1 {
+	margin-bottom: 15px;
+}
+
+.manual-main-article-div {
+	width: 854px;
+	margin-top: 15px;
+	box-shadow: 0px 1px 7px 0px rgba(98, 127, 107, 0.2);
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.manual-main-article-div>p {
+	font-size: 28px;
+	font-weight: normal;
+	color: #333333;
+	text-align: center;
+	padding-top: 40px;
+	margin-bottom: 20px;
+}
+
+.manual-main-article-div>div {
+	display: inline-block;
+	width: 342px;
+	margin-bottom: 30px;
+	height: 170px;
+	overflow: hidden;
+}
+
+.manual-main-article-div i {
+	display: inline-block;
+	vertical-align: top;
+	width: 4px;
+	height: 4px;
+	background-color: #333333;
+	border-radius: 100%;
+	margin-top: 15px;
+	margin-right: 10px;
+}
+
+.manual-main-article-div a {
+	display: inline-block;
+	line-height: 30px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #666666;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.manual-main-article-div a:hover {
+	color: #1ec456;
+}
+
+.manual-main-article-div a:hover i {
+	background-color: #1ec456;
+}
+
+
+
+.manual-main-article-div .guide-div {
+    margin-left: 55px;
+	height: 173px;
+	overflow: hidden;
+}
+
+
+.manual-main-article-div .guide-div a {
+	min-width: 100px;
+	max-width: 100px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-right: 10px;
+}
+
+
+
+/* 使用手册-详情页*/
+.manual-details-main-div {
+	box-shadow: 0px 1px 7px 0px rgba(98, 127, 107, 0.13);
+	margin-top: 15px;
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+}
+
+.help-details-main-div1 {
+	padding-top: 30px;
+}
+
+.help-details-main-div2 {
+	margin-top: 30px;
+}
+
+.manual-main aside .manual-main-aside-div2:nth-child(2) ul {
+	display: block;
+}
+
+
+
+
+
+
+
+
+/* 滚动条 */
+/* 设置滚动条的样式 */
+.scroll::-webkit-scrollbar {
+	width: 4px;
+}
+
+/* 滚动槽 */
+.scroll::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+.scroll::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background: #E7E7E7;
+}
+
+
+/* IE 浏览器 */
+.scroll {
+	/*三角箭头的颜色*/
+	scrollbar-arrow-color: #fff;
+	/*滚动条滑块按钮的颜色*/
+	scrollbar-face-color: #E7E7E7;
+	/*滚动条整体颜色*/
+	scrollbar-highlight-color: #fff;
+	/*滚动条阴影*/
+	scrollbar-shadow-color: #fff;
+	/*滚动条轨道颜色*/
+	scrollbar-track-color: #fff;
+	/*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+	scrollbar-3dlight-color: #333;
+	/*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+	scrollbar-darkshadow-color: #333;
+	/*滚动条基准颜色*/
+	scrollbar-base-color: #333;
+}
+
+.manual-main-article-div .manual-problem{
+	width: 100%;
+}
+
+
+.manual-main-article-div .manual-problem a{
+	width: 342px;
+	margin-left: 55px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.other-top-a>h1 {
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
+	min-width: 58px;
+}
+
+
+.other-top-a>h1 a {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 153px;
+}

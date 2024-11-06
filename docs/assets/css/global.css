@@ -1,0 +1,572 @@
+/* 取消页面全局内外边距 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* 设置全局大小 */
+body {
+	min-width: 1300px;
+	background: #fff;
+	font-family: Microsoft Yahei;
+	position: relative;
+}
+
+/* 中间内容设置 */
+.content {
+	width: 1200px;
+	margin: auto;
+}
+
+/* 设置文本超链接a */
+a {
+	text-decoration: none;
+	color: #333333;
+}
+
+/*===== 统一设置列表的margin和padding，以及列表表形式 =====*/
+ul,
+ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* input样式设置 */
+input,
+button {
+	outline: none;
+	height: 25px;
+}
+
+/* 统一文本输入框、下拉、文本框的背景色，避免被用户设置系统颜色而破坏页面色彩 */
+select {
+	border: 1px inset;
+}
+
+/* 统一下拉的边框 */
+textarea {
+	overflow: auto;
+	vertical-align: text-bottom;
+	*vertical-align: auto;
+	border: 1px solid;
+	resize: vertical;
+}
+
+/* 滚动条为auto，与周边的元素对齐方式，其中hack部分是IE6&7中vertical-align影响范围清除，resize为上下可拉动，避免左右拉动破坏页面布局，如有需要可以设置为none */
+/*===== 设置表格元素的样式 =====*/
+table {
+	border-spacing: 0;
+}
+
+/* 合并表格的间隙，去掉单元格之间的间距，如有需要合并单元格为细线表格，可增加 border-collapse:collapse; */
+td,
+th,
+caption {
+	padding: 0;
+}
+
+/*===== 去除个别浏览器图片底部的几个像素，以及设置图片形式链接无边框 =====*/
+img {
+	vertical-align: sub;
+}
+
+a img {
+	border: 0 none;
+}
+
+/*===== 字体控制 =====*/
+body,
+input,
+button,
+select,
+optgroup,
+option,
+textarea,
+pre {
+	/* font-family: 'Microsoft YaHei', 'Simsun', STXihei, 'sans-serif'; */
+}
+
+/*===== 设置iframe的背景色以及去除个别浏览器iframe底部的几个像素 =====*/
+iframe {
+	background-color: #FFFFFF;
+	vertical-align: middle;
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+/* 颜色 */
+.hover1 {
+	color: #1ec456;
+}
+
+.hover2 {
+	color: #00A565;
+}
+
+/* 文本位置 */
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+/* 清楚浮动 */
+.flo:after {
+	content: ".";
+	display: block;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+/*兼容IE浏览器*/
+.flo {
+	zoom: 1;
+}
+
+/* 字体 */
+@font-face {
+	font-family: "ysbth";
+	src: url(../fonts/ysbth.ttf),
+		url(../fonts/ysbth.woff),
+		url(../fonts/ysbth.eot);
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "PlayfairDisplay-Italic-6";
+	src: url(../fonts/playfairdisplay-italic-6.ttf),
+		url(../fonts/playfairdisplay-italic-6.woff),
+		url(../fonts/playfairdisplay-italic-6.eot);
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 导航 */
+.header {
+	width: 100%;
+	box-shadow: 0px 2px 6px 0px rgba(98, 127, 107, 0.13);
+	height: 70px;
+}
+
+.header .nav:nth-child(1) {
+	float: left;
+	margin-top: 5px;
+	width: 200px;
+}
+
+.header .nav:nth-child(2) {
+	float: right;
+}
+
+.header h1 {
+	display: inline-block;
+	line-height: 66px;
+	font-size: 16px;
+	width: 96px;
+	font-weight: normal;
+}
+
+.header a {
+	display: inline-block;
+	line-height: 66px;
+	font-size: 16px;
+	width: 120px;
+	text-align: center;
+	border-top: 4px solid #fff;
+	font-weight: normal;
+	float: left;
+	margin-left: 5px;
+}
+
+.header .nav .action {
+	background-image: linear-gradient(180deg, #E8FAF3 0%, #F8FEFC 100%);
+	border-top: 4px solid #1ec456;
+	color: #1ec456;
+	font-weight: 900;
+}
+
+.header .nav .action h1 {
+	font-weight: 900;
+}
+
+.header .nav:nth-child(2) a:hover {
+	background-image: linear-gradient(180deg, #E8FAF3 0%, #F8FEFC 100%);
+	border-top: 4px solid #1ec456;
+	color: #1ec456;
+	font-weight: 900;
+}
+
+.header .nav:nth-child(2) a:hover h1 {
+	font-weight: 900;
+}
+
+.header .nav-a {
+	float: right;
+}
+
+.header .nav-a span {
+	float: left;
+	line-height: 66px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 2px;
+}
+
+.header .nav-a a {
+	width: auto;
+	float: left;
+}
+
+.header .nav-a a:hover {
+	color: #1ec456;
+	font-weight: 900;
+}
+
+.header .nav-a .action1 {
+	color: #1ec456;
+	font-weight: 900;
+}
+
+/* 底部 */
+/* 首页底部 */
+.index-footer {
+	display: none;
+
+}
+
+/* 其他页面底部 */
+.other-footer {
+	display: block;
+	background: #F7F7F7;
+	text-align: center;
+}
+
+.other-footer p {
+	font-size: 14px;
+	font-weight: normal;
+	color: #555555;
+	line-height: 80px;
+}
+
+.other-footer p a {
+	font-size: 14px;
+	font-weight: normal;
+	color: #555555;
+}
+
+.other-footer p a:hover {
+	color: #0cce70;
+}
+
+/* 快捷键查询 */
+.index-shortcuts {
+	width: 1200px;
+	background-color: #f1fbf7;
+	/* padding-bottom: 15px; */
+}
+
+.index-shortcuts .index-main-top1 {
+	display: inline-block;
+	margin-top: 15px;
+	padding-top: 10px;
+	font-size: 32px;
+	line-height: 40px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	color: #333333;
+	margin-left: 5px;
+	margin-right: 5px;
+	background: url(../images/title_style.png)no-repeat right top;
+	padding-right: 23px;
+}
+
+.index-shortcuts .index-main-top1 i {
+	display: inline-block;
+	background: #1ec456;
+	width: 5px;
+	height: 40px;
+	vertical-align: sub;
+	margin-right: 5px;
+}
+
+.index-shortcuts-div1 {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 20px;
+	margin-left: 110px;
+	margin-bottom: 20px;
+	position: relative;
+	text-align: center;
+}
+
+.index-shortcuts-div1 img {
+	width: 185px;
+	height: 185px;
+}
+
+.shortcuts-div1-span {
+	display: block;
+	position: absolute;
+	width: 185px;
+	height: 86px;
+	line-height: 50px;
+	top: 66px;
+	color: #333;
+}
+
+.shortcuts-div1-span img {
+	width: 102px;
+	height: 100%;
+}
+
+.shortcuts-div1-span1 {
+	font-size: 30px;
+	font-family: "PlayfairDisplay-Italic-6";
+}
+
+.shortcuts-div1-span2 {
+	font-size: 30px;
+	font-family: "PlayfairDisplay-Italic-6";
+}
+
+.shortcuts-div1-span3 {
+	font-size: 50px;
+	font-family: "PlayfairDisplay-Italic-6";
+}
+
+.index-shortcuts-div2 {
+	display: inline-block;
+	vertical-align: top;
+	float: right;
+	width: 610px;
+	margin-right: 160px;
+}
+
+.shortcuts-div2-p {
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 22px;
+	color: #1ec456;
+	margin-top: 15px;
+}
+
+.shortcuts-div2-p1 {
+	font-size: 14px;
+	font-weight: normal;
+	color: #999999;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+/* 快捷键 */
+.quickly-find {}
+
+.hotkey {
+	position: relative;
+	font-size: 0;
+	color: #666;
+}
+
+.hotkey .txt,
+.hotkey .select,
+.hotkey .key-value,
+.hotkey a {
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 20px;
+	font-weight: normal;
+	color: #333333;
+	line-height: 33px;
+}
+
+.hotkey .key-value {
+	text-align: center;
+	font-size: 16px;
+	font-weight: normal;
+	color: #999999;
+	line-height: 33px;
+	margin-top: 17px;
+}
+
+.hotkey .key-value span {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.hotkey .key-value span:nth-child(2) {
+	font-family: monospace;
+	font-style: oblique;
+	font-size: 33px;
+	color: #1ec456;
+	vertical-align: sub;
+}
+
+.hotkey .select {
+	position: relative;
+	user-select: none;
+	margin-left: 10px;
+}
+
+.hotkey .select:nth-child(1) {
+	margin-left: 0px;
+}
+
+.hotkey .select .icon {
+	position: absolute;
+	right: 20px;
+	top: 6px;
+	width: 15px;
+	height: 6px;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-bottom-color: #bdbdbd;
+}
+
+.hotkey .select .icon.down {
+	right: 20px;
+	top: 14px;
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-top-color: #bdbdbd;
+}
+
+.hotkey .select-value {
+	width: 214px;
+	height: 33px;
+	display: inline-block;
+	/* border-radius: 4px; */
+	text-align: center;
+	cursor: pointer;
+	font-size: 16px;
+	color: #666;
+	background-color: #ffffff;
+	border: solid 1px #e1e1e1;
+}
+
+.hotkey .select-list {
+	position: absolute;
+	left: 0;
+	top: 34px;
+	z-index: 99;
+	width: 214px;
+	display: none;
+	border: solid 1px #e1e1e1;
+	border-top: none;
+	background-color: #fff;
+}
+
+.hotkey .select-list ul {
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.hotkey .select-list ul::-webkit-scrollbar {
+	width: 5px;
+	background-color: #fff;
+}
+
+.select-value span {}
+
+.hotkey .select-list ul::-webkit-scrollbar-button {
+	display: none;
+}
+
+.hotkey .select-list ul::-webkit-scrollbar-thumb {
+	background-color: #E7E7E7;
+	border-radius: 4px;
+}
+
+.hotkey .select-list ul span {
+	display: inline-block;
+	margin-left: 5px;
+}
+
+/* IE 浏览器 */
+.hotkey .select-list {
+	/*三角箭头的颜色*/
+	scrollbar-arrow-color: #fff;
+	/*滚动条滑块按钮的颜色*/
+	scrollbar-face-color: #E7E7E7;
+	/*滚动条整体颜色*/
+	scrollbar-highlight-color: #fff;
+	/*滚动条阴影*/
+	scrollbar-shadow-color: #fff;
+	/*滚动条轨道颜色*/
+	scrollbar-track-color: #fff;
+	/*滚动条3d亮色阴影边框的外观颜色——左边和上边的阴影色*/
+	scrollbar-3dlight-color: #333;
+	/*滚动条3d暗色阴影边框的外观颜色——右边和下边的阴影色*/
+	scrollbar-darkshadow-color: #333;
+	/*滚动条基准颜色*/
+	scrollbar-base-color: #333;
+}
+
+.hotkey .select-list li {
+	font-size: .8em;
+	padding: 0 1em;
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+
+.hotkey .select-list li.disabled {
+	font-size: .8em;
+	color: #999;
+	cursor: default;
+}
+
+.hotkey .select-list li:hover {
+	background: #FAFAFA;
+}
+
+.hotkey .txt {
+	margin-right: 10px;
+}
+
+.hotkey a {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 14px;
+	font-weight: normal;
+	width: 111px;
+	height: 33px;
+	background-color: #1ec456;
+	color: #fff;
+	line-height: 33px;
+	text-align: center;
+}
+
+.hotkey a:hover {
+	background: #00A565;
+}
+
+.hotkey a i {
+	font-family: Simsun;
+	font-style: normal;
+	font-weight: 700;
+}

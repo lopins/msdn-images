@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>关于我们-大白菜官网</title>
+	<link rel="shortcut icon" href="/favicon.ico" type="image/icon" />
+	<link href="assets/css/global.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/other.css" rel="stylesheet" type="text/css" />
+	<meta name="applicable-device" content="pc">
+	<meta http-equiv="Cache-Control" content="no-transform" />
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+</head>
+
+<body>
+	<!-- 关于我们-使用协议 -->
+	<!-- 顶部导航header-->
+	<header class="header">
+		<div class="content flo">
+			<nav class="nav">
+				<a href="/">
+					<h1><img src="assets/picture/31c27e8468d798f1cc5966adbaf5509e.png" alt="大白菜官网"></h1>
+				</a>
+			</nav>
+			<nav class="flo nav">
+				<a href="/" class="">首页</a>
+				<a href="/u.html" class="">软件下载</a>
+				<a href="/help.html" class="">帮助中心</a>
+				<a href="/manual.html" class="">使用手册</a>
+
+			</nav>
+		</div>
+	</header>
+
+
+	<section class="aboutUs-main content flo">
+		<aside class="aboutUs-aside">
+			<div class="aboutUs-aside-div1 aboutUs-aside-div">
+				<a href="/about.html"><img src="assets/picture/abou_us_pre.png" alt="">关于我们</a>
+				<p><span></span></p>
+			</div>
+			<div class="aboutUs-aside-div2">
+				<a href="/protocol.html"><img src="assets/picture/agreement_n.png" alt="">免责声明</a>
+				<p><span></span></p>
+			</div>
+		</aside>
+
+		<!-- 关于我们 -->
+		<article class="aboutUs-article1">
+			<p class="aboutUs-p1">关于我们<span></span></p>
+			<p class="aboutUs-p2">东莞市互泰网络科技有限公司成立于2017年，是一家追求创新的网络技术和软件应用提供商。</p>
+			<p class="aboutUs-p3">经营范围</p>
+			<p class="aboutUs-p2">目前主要经营范围有计算机硬件开发，网络技术服务、网络技术咨询、电子商务平台维护、互联网技术开发及转让，代理国内外各类广告。</p>
+			<div class="aboutUs-div1">
+				<div>
+					<img src="assets/picture/1_hardware.png" alt="">
+					<p>计算机硬件开发</p>
+				</div>
+				<div>
+					<img src="assets/picture/2_technical_service.png" alt="">
+					<p>网络技术服务</p>
+				</div>
+				<div>
+					<img src="assets/picture/3_technical_consultation.png" alt="">
+					<p>网络技术咨询</p>
+				</div>
+				<div>
+					<img src="assets/picture/4_maintain.png" alt="">
+					<p>电子商务平台维护</p>
+				</div>
+				<div>
+					<img src="assets/picture/5_internet.png" alt="">
+					<p>互联网技术开发及转让</p>
+				</div>
+				<div>
+					<img src="assets/picture/6_advertisement.png" alt="">
+					<p>代理国内外各类广告</p>
+				</div>
+			</div>
+			<p class="aboutUs-p1">联系我们<span></span></p>
+			<div class="aboutUs-div2 flo">
+				<div>
+					<span>微信公众号</span>
+					<p>关注微信公众号</p>
+					<img src="assets/picture/wechat.png" alt="">
+				</div>
+				<div>
+					<span>QQ客服</span>
+					<p>联系QQ客服</p>
+					<img src="assets/picture/qq.png" alt="">
+				</div>
+				<div>
+					<span>QQ群聊</span>
+					<p>加入QQ群聊</p>
+					<img src="assets/picture/fd1d6af8a5294358287b102bc475e014.png" alt="">
+				</div>
+			</div>
+		</article>
+
+	</section>
+	<div class="other-footer">
+		<p><a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备18105804号</a> 东莞市互泰网络科技有限公司版权所有</p>
+	</div>
+	<p><a href="/" target="_blank">大白菜</a></p>
+	<link type="text/css" rel="stylesheet" href="assets/css/kefu.css" />
+	<script src="assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="assets/js/kefu.js"></script>
+	<script src="assets/js/article-down.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/global.js" type="text/javascript" charset="utf-8"></script>
+	<script src="assets/js/referrer.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		document.querySelectorAll('oembed[url]').forEach(element => {
+			const videoLable = document.createElement('video');
+
+			videoLable.setAttribute('src', element.getAttribute('url'));
+			videoLable.setAttribute('controls', 'controls');
+			videoLable.setAttribute('style', ' width: 100%;height: 100%; ');
+
+			element.appendChild(videoLable);
+		});
+	</script>
+
+
+	<script>
+		aboutUs();
+		function aboutUs() {
+			var ses = sessionStorage.aboutUs;
+			if (ses == "1") {
+				// $('.aboutUs-aside-div1 a').trigger("click");
+			} else if (ses == "2") {
+				// $('.aboutUs-aside-div1 a').trigger("click");
+				$('html,body').animate({
+					scrollTop: $('.aboutUs-div2').offset().top
+				}, 0);
+
+			}
+			$(".aboutUs-aside-div2").click(function () {
+				sessionStorage.setItem("aboutUs", "1");
+			})
+		}
+	</script>
+</body>
+
+</html>

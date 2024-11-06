@@ -1,0 +1,86 @@
+/* 帮助中心 */
+/* 内容 */
+.other-article-main {
+	margin-top: 10px;
+	width: 752px;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 7px 0px rgba(98, 127, 107, 0.2);
+}
+
+.help-article-main-div {
+	width: 696px;
+	margin: auto;
+	border-top: 1px #f2f2f2 solid;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+.help-article-main-div:nth-child(1) {
+	border-top: none;
+}
+
+.help-article-main-div a {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.help-article-main-div a img {
+	width: 76px;
+	height: 80px;
+	vertical-align: top;
+	margin-right: 15px;
+}
+
+.help-article-main-div>div {
+	width: 600px;
+	display: inline-block;
+}
+
+.help-article-main-div>div p {
+	width: 600px;
+	font-size: 16px;
+	font-weight: normal;
+	color: #999999;
+	margin-top: 13px;
+	line-height: 25px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.help-article-main-div>div span {
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	color: #999999;
+}
+
+.help-article-main-div>div a {
+	font-size: 18px;
+	font-weight: normal;
+	color: #333333;
+	margin-top: -2px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 450px;
+	display: inline-block;
+
+}
+
+.help-article-main-div>div a:hover {
+	color: #1ec456;
+}
+
+/* 帮助中心-详情页 */
+.help-details-main {
+	width: 100%;
+	box-shadow: 0px 1px 7px 0px rgba(98, 127, 107, 0.2);
+	margin-top: 10px;
+	padding-bottom: 30px;
+	margin-bottom: 80px;
+}
+
+
+

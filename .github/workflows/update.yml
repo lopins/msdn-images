@@ -1,0 +1,74 @@
+name: Update JSON Files - CI
+
+on:
+  schedule:
+    # 每周日凌晨 0 点执行一次
+    - cron: "0 0 * * 0"
+  push:
+    paths-ignore:
+      - "LICENSE"
+      - "README.md"
+      - "README_**"
+      - "README-**"
+    branches:
+      - main
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  download-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出需要使用的代码到工作区
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          # 保留任何凭证(后续git push需要使用)
+          persist-credentials: true
+          ref: main
+
+      # 建立 Python 环境和包
+      - name: Install Python, pipenv and Pipfile packages
+        uses: palewire/install-python-pipenv-pipfile@v4
+        with:
+          # Netlify运行环境: https://github.com/netlify/build-image/blob/focal/included_software.md
+          python-version: '3.8'
+
+      # 运行本仓库文件
+      - name: update-json-files
+        # # 如果是 Secrets 变量, 则启用这里的设置
+        # env:
+        #   GPTAGENT_API_KEYS: ${{ secrets.GPTAGENT_API_KEYS }}
+        #   WEB_PLATFORM_ARGS: ${{ secrets.WEB_PLATFORM_ARGS }}
+        run: |
+          # 域名可以是：msdn.lopins.cn，msdn.lopins.cn/docs
+          pipenv run python main.py -d msdn.lopins.cn
+
+      - name: Commit and Push
+        run: |
+          git diff --sparse || true
+          if [ -n "$(git status --porcelain)" ]; then
+            git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+            git config --global user.name "${{ github.actor }}"
+            git add -A
+            git commit -m "Updated JSON Files"
+            git push
+          else
+            echo "No Required Updates"
+          fi
+      
+      - name: Deploy 🚀
+        uses: peaceiris/actions-gh-pages@v4
+        with:   
+          github_token: ${{ secrets.GITHUB_TOKEN }}       
+          publish_branch: gh-pages  # default: gh-pages
+          publish_dir: ./docs       # default: public
+          cname: msdn.lopins.cn     # default: 可选：如果使用 username.github.io/repository 可以不要这个参数
+          # user_name: 'github-actions[bot]'
+          # user_email: 'github-actions[bot]@users.noreply.github.com'
+          # commit_message: ${{ github.event.head_commit.message }}
+          # full_commit_message: ${{ github.event.head_commit.message }}
+          # enable_jekyll: true

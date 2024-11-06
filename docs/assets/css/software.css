@@ -1,0 +1,230 @@
+/* 软件下载 */
+.software-article-main {
+	width: 100%;
+}
+.nav1{
+	float: left;
+}
+.other-banner{
+	position: relative;
+}
+.other-banner>div{
+	position: absolute;
+	z-index: 2;
+	top: 0px;
+	left: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+.software-article-main-div {
+	width: 752px;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #ffffff;
+	box-shadow: 0px 0px 0px 0px rgba(98, 127, 107, 0.4);
+	margin-top: 20px;
+	border: 1.4px #EBEFED solid;
+}
+.software-article-main-div:nth-child(1){
+	margin-top: 10px;
+}
+.software-article-main-div:hover {
+	box-shadow: 0px 3px 16px 0px rgba(98, 127, 107, 0.25);
+
+}
+
+.software-article-main-div1 {
+	width: 431px;
+	margin-left: 40px;
+	display: inline-block;
+}
+
+.software-article-main-div1 a {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.software-article-main-div1 a:hover {
+	color: #1ec456;
+}
+
+.software-article-main-div1 p {
+	font-size: 16px;
+	font-weight: normal;
+	color: #666666;
+	display: inline;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.software-article-main-div1 div {
+	margin-top: 30px;
+}
+
+.software-article-main-div1 div>span {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 24px;
+	color: #1ec456;
+}
+
+.software-article-main-div1 p>span {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 30px;
+	letter-spacing: 1px;
+	color: #999999;
+	margin-top: 30px;
+	margin-right: 10px;
+}
+
+.software-article-main-div2 {
+	display: inline-block;
+	float: right;
+	margin-right: 40px;
+}
+
+.software-article-main-div2 div {}
+
+.software-article-main-div2 img {
+	width: 195px;
+	height: 158px;
+
+}
+
+.software-article-main-div2>a {
+	display: block;
+	width: 129px;
+	height: 35px;
+	border: solid 1px #1ec456;
+	line-height: 35px;
+	text-align: center;
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 1px;
+	color: #1ec456;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.software-article-main-div2>a:hover {
+	color: #fff;
+	background: #1ec456;
+}
+
+.software-article-main-div2 div a {
+	display: inline-block;
+}
+
+
+
+
+
+/* 软件下载-详情页 */
+.software-details-main {
+	width: 100%;
+	box-shadow: 0px 1px 7px 0px rgba(98, 127, 107, 0.2);
+	margin-top: 10px;
+	margin-bottom: 80px;
+}
+
+.software-details-div1 {
+	width: 674px;
+	margin: auto;
+}
+
+.software-details-div1>div {
+	display: inline-block;
+	padding-top: 35px;
+}
+
+.software-details-div1>div:nth-child(1) {
+	width: 410px;
+	vertical-align: top;
+
+}
+
+.software-details-div1>div p {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333333;
+	margin-bottom: 30px;
+}
+
+.software-details-div1>div div {
+	text-align: left;
+}
+
+.software-details-div1>div div>span {
+	font-size: 14px;
+	color: #333333;
+	display: inline-block;
+	min-width: 140px;
+	margin-bottom: 5px;
+	margin-right: 40px;
+}
+
+.software-details-div1>div span span {
+	color: #666666;
+}
+
+.software-details-div1>div:nth-child(2) {
+	float: right;
+}
+
+.software-details-div1>div:nth-child(2) img {
+	margin-top: 10px;
+}
+
+
+
+/* 下载 */
+.software-details-div2 {
+	width: 674px;
+	height: 78px;
+	background: #F1FBF7;
+	text-align: center;
+	margin: auto;
+	line-height: 78px;
+	margin-top: 35px;
+	position: relative;
+}
+.software-details-div2 a{
+	display: inline-block;
+		font-size: 14px;
+		color: #333333;
+		margin-left: 50px;
+}
+.software-details-div2 a:hover{
+	color: #1ec456;
+}
+.software-details-div2 a img{
+	margin-right: 5px;
+}
+.software-details-div2 a:nth-child(1){
+	margin-left: 0px;
+}
+
+.software-details-div3 p:nth-child(1)>strong>font {
+	color: #1EC456;
+	font-weight: normal;
+}
+
+.software-details-div3 p{
+	overflow: hidden;
+	width: 675px;
+}
+.software-details-div3 p img{
+	max-width: 675px;
+	display: block;
+}
+.software-details-div1>div:nth-child(2) img {
+    margin-top: 10px;
+    width: 156px;
+}
+
+
+
